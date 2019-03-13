@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Pick a Color: </h1>
+  <table>
+    <tr>
+      <td *ngFor="let color of primary" [ngStyle]="{'background-color': color}" id={{color}} (click)="click">
+      </td>
+    </tr>
+  </table>
+</div>

@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-  private NUM_OF_ROWS = 50 // 50 looks good
-  private NUM_OF_COLS = 100 // 100 looks good
+  private NUM_OF_ROWS = 20// 50 max looks good
+  private NUM_OF_COLS = 40 // 100 max looks good
   private rows = []
   private cols = []
 
