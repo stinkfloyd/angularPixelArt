@@ -1,5 +1,4 @@
 table {
-  margin-top: 3em;
   display: block;
   overflow: scroll;
 }
@@ -7,4 +6,12 @@ table {
 td {
   border: 1px solid black;
   padding: 20px;
+}
+
+.current {
+  border: 1px solid black;
+  padding: 15px;
+  margin-bottom: 3px;
+  margin-left: 13px;
+  font-size: 12px;
 }

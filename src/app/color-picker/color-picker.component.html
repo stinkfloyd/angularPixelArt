@@ -2,8 +2,11 @@
   <h1>Pick a Color: </h1>
   <table>
     <tr>
-      <td *ngFor="let color of primary" [ngStyle]="{'background-color': color}" id={{color}} (click)="click">
+      <td *ngFor="let color of primary" [ngStyle]="{'background-color': color}" id={{color}} (click)="click($event)">
       </td>
     </tr>
   </table>
+  <div>
+    <h1>Current Color: <span class='current' [ngStyle]="{'background-color': current}"></span></h1>
+  </div>
 </div>

@@ -9,6 +9,7 @@ import { PRIMARY_OUTLET } from '@angular/router'
 export class ColorPickerComponent implements OnInit {
   private NUM_CUSTOM_COLORS = 8
   primary = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'black', 'white']
+  current = 'black'
   custom = []
 
   constructor() { }
@@ -23,5 +24,8 @@ export class ColorPickerComponent implements OnInit {
     })
   }
 
+  click = (event) => {
+    this.current = event.target.id
+  }
 
 }
