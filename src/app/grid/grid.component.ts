@@ -23,4 +23,14 @@ export class GridComponent implements OnInit {
     }
   }
 
+  click = (event) => {
+    if (event.target.classList.contains('off')) {
+      event.target.classList.replace('off', 'on')
+      event.target.setAttribute('style', 'background-color : black')
+    } else {
+      event.target.classList.replace('on', 'off')
+      event.target.setAttribute('style', 'background-color: white')
+    }
+  }
+
 }
