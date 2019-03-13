@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
 
 @Component({
   selector: 'app-grid',
@@ -10,6 +10,7 @@ export class GridComponent implements OnInit {
   private NUM_OF_COLS = 40 // 100 max looks good
   private rows = []
   private cols = []
+  @Input() currentColor
 
   constructor() { }
 
@@ -26,11 +27,15 @@ export class GridComponent implements OnInit {
   click = (event) => {
     if (event.target.classList.contains('off')) {
       event.target.classList.replace('off', 'on')
-      event.target.setAttribute('style', 'background-color : black')
+      event.target.setAttribute('style', `background-color : ${this.currentColor}`)
     } else {
       event.target.classList.replace('on', 'off')
       event.target.setAttribute('style', 'background-color: white')
     }
+  }
+
+  colorChange = (event) => {
+    console.log('test')
   }
 
 }

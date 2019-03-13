@@ -1,4 +1,4 @@
-<app-grid></app-grid>
-<app-color-picker></app-color-picker>
+<app-grid [currentColor]="currentColor"></app-grid>
+<app-color-picker (colorChange)="colorChange($event)"></app-color-picker>
 
 <router-outlet></router-outlet>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core'
-import { PRIMARY_OUTLET } from '@angular/router'
+import { Component, OnInit, Output, EventEmitter } from '@angular/core'
+
 
 @Component({
   selector: 'app-color-picker',
@@ -9,6 +9,8 @@ import { PRIMARY_OUTLET } from '@angular/router'
 export class ColorPickerComponent implements OnInit {
   private NUM_CUSTOM_COLORS = 8
   primary = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'black', 'white']
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output() colorChange: EventEmitter<any> = new EventEmitter()
   current = 'black'
   custom = []
 
@@ -26,6 +28,7 @@ export class ColorPickerComponent implements OnInit {
 
   click = (event) => {
     this.current = event.target.id
+    this.colorChange.emit(event.target.id)
   }
 
 }
