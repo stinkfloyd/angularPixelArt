@@ -1,10 +1,11 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-6">
+<div class="container-fluid view">
+  <div class="row row-eq-height">
+    <div class="col-sm-7">
       <app-grid #pixelCanvas [currentColor]="currentColor"></app-grid>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-5">
       <app-color-picker (colorChange)="colorChange($event)" (fill)="quickFill()"></app-color-picker>
+      <p>Made by: Nicholas Tzavaras</p>
     </div>
   </div>
 </div>

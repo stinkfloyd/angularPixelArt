@@ -6,8 +6,8 @@ import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core'
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-  private NUM_OF_ROWS = 20// 50 max looks good
-  private NUM_OF_COLS = 20 // 100 max looks good
+  private NUM_OF_ROWS = 35// 50 max looks good
+  private NUM_OF_COLS = 49 // 100 max looks good
   private rows = []
   private cols = []
   @Input() currentColor

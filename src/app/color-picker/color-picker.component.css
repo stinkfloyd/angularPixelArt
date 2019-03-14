@@ -14,4 +14,18 @@ label {
 
 .colorPicker {
   margin-top: 3em;
+  background-color: white;
+  text-align: center;
+  border: 2px solid black;
+  padding: 3px;
+}
+
+.instructions {
+  padding-left: 3em;
+  padding-right: 3em;
+  font-size: 15px;
+}
+
+.title {
+  text-align: center;
 }

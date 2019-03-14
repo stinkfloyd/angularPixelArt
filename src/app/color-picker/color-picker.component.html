@@ -1,6 +1,14 @@
 <div class="colorPicker">
+  <h1 class="title">Welcome to the Angular Pixel Art Maker!</h1>
+  <p class="instructions">
+    - You may change colors by clicking on the colored circle below. <br>
+    - Custom colors may be saved by clicking "Add Color" on the left in the color chooser. <br>
+    - You can click single pixels, or drag to paint with the selected color. <br>
+    - Double-Clicking a pixel will erase the color. <br>
+    - Clicking Quick-Fill changes the color of all squares. IE: Quick-Fill with white selected will clear the grid. <br>
+  </p>
   <label>
-    Current Color (click to change):
+    Current Color:
   </label>
   <input [style.background]="color" [cpAlphaChannel]="'always'" [cpOutputFormat]="'rgba'" [cpPresetColors]="['#fff', '#2889e9']"
     (colorPickerChange)=change($event) [cpAddColorButton]="true" [(colorPicker)]="color" class="picker" />
