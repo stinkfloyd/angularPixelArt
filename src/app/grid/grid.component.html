@@ -1,7 +1,7 @@
-<table (click)="click($event)">
+<table #pixelCanvas (mousedown)="dragColor($event)">
   <tr *ngFor="let number of rows">
-    <td *ngFor="let number of cols" class="off">
-
+    <td *ngFor="let number of cols" class="off" (mousedown)="pixelColor($event)" (dblclick)="dblClick($event)">
+      <!-- Grid is displayed here -->
     </td>
   </tr>
 </table>

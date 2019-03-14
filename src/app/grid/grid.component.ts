@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core'
 
 @Component({
   selector: 'app-grid',
@@ -6,11 +6,13 @@ import { Component, OnInit, Input } from '@angular/core'
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-  private NUM_OF_ROWS = 50// 50 max looks good
-  private NUM_OF_COLS = 50 // 100 max looks good
+  private NUM_OF_ROWS = 20// 50 max looks good
+  private NUM_OF_COLS = 20 // 100 max looks good
   private rows = []
   private cols = []
   @Input() currentColor
+  @ViewChild('pixelCanvas') pixelCanvas: ElementRef
+  private down = false
 
   constructor() { }
 
@@ -24,14 +26,29 @@ export class GridComponent implements OnInit {
     }
   }
 
-  click = (event) => {
-    if (event.target.classList.contains('off')) {
-      event.target.classList.replace('off', 'on')
-      event.target.setAttribute('style', `background-color : ${this.currentColor}`)
-    } else {
-      event.target.classList.replace('on', 'off')
-      event.target.setAttribute('style', 'background-color: white')
-    }
+  dblClick = (event) => {
+    event.target.setAttribute('style', 'background-color: white')
   }
 
+  pixelColor = (event) => {
+    event.target.setAttribute('style', `background-color : ${this.currentColor}`)
+
+  }
+
+  dragColor = (event) => {
+    this.down = true
+    this.pixelCanvas.nativeElement.addEventListener('mouseup', () => {
+      this.down = false
+    })
+    this.pixelCanvas.nativeElement.addEventListener('mouseleave', () => {
+      this.down = false
+    })
+    this.pixelCanvas.nativeElement.addEventListener('mouseover', (e) => {
+      if (this.down) {
+        if (e.target.tagName === 'TD') {
+          e.target.style.backgroundColor = this.currentColor
+        }
+      }
+    })
+  }
 }
