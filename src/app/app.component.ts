@@ -13,7 +13,6 @@ export class AppComponent {
   currentColor = 'black'
 
   colorChange = (color) => {
-    console.log('colorChange')
     this.currentColor = color
   }
 
