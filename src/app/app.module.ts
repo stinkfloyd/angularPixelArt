@@ -6,14 +6,13 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { GridComponent } from './grid/grid.component'
 import { ColorPickerComponent } from './color-picker/color-picker.component'
-import { ToolbarComponent } from './toolbar/toolbar.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     GridComponent,
     ColorPickerComponent,
-    ToolbarComponent
+
   ],
   imports: [
     BrowserModule,

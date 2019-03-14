@@ -7,11 +7,20 @@
     - Double-Clicking a pixel will erase the color. <br>
     - Clicking Quick-Fill changes the color of all squares. IE: Quick-Fill with white selected will clear the grid. <br>
   </p>
+  <form class="size-picker" (submit)="submit($event)">
+    Height:
+    <input type="number" class="input-height" name="height" min="1" max="50" value="25">
+    Width:
+    <input type="number" class="input-width" name="width" min="1" max="50" value="25">
+    <br>
+    <input type="submit" class="submit-button" value="Make New Grid">
+  </form>
   <label>
     Current Color:
   </label>
   <input [style.background]="color" [cpAlphaChannel]="'always'" [cpOutputFormat]="'rgba'" [cpPresetColors]="['#fff', '#2889e9']"
     (colorPickerChange)=change($event) [cpAddColorButton]="true" [(colorPicker)]="color" class="picker" />
-  <label>Fill grid with selected color: </label>
+  <br>
   <input type="button" class="quick-fill" value="Quick-Fill" (click)="quickFill($event)">
+
 </div>

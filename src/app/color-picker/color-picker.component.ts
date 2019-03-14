@@ -9,6 +9,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core'
 export class ColorPickerComponent implements OnInit {
   @Output() colorChange: EventEmitter<any> = new EventEmitter()
   @Output() fill: EventEmitter<any> = new EventEmitter()
+  @Output() size: EventEmitter<any> = new EventEmitter()
 
   constructor() { }
 
@@ -21,5 +22,10 @@ export class ColorPickerComponent implements OnInit {
 
   quickFill = (event) => {
     this.fill.emit(event)
+  }
+
+  submit = (event) => {
+    event.preventDefault()
+    this.size.emit(event)
   }
 }

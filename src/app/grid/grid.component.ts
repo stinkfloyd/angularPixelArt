@@ -6,8 +6,8 @@ import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core'
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-  private NUM_OF_ROWS = 35// 50 max looks good
-  private NUM_OF_COLS = 49 // 100 max looks good
+  @Input() NUM_OF_ROWS
+  @Input() NUM_OF_COLS
   private rows = []
   private cols = []
   @Input() currentColor
@@ -17,13 +17,8 @@ export class GridComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    for (let i = 0; i < this.NUM_OF_ROWS; i++) {
-      this.rows.push(i)
-    }
 
-    for (let i = 0; i < this.NUM_OF_COLS; i++) {
-      this.cols.push(i)
-    }
+    this.makeGrid(this.NUM_OF_ROWS, this.NUM_OF_COLS)
   }
 
   dblClick = (event) => {
@@ -55,5 +50,19 @@ export class GridComponent implements OnInit {
 
   fill = () => {
     this.pixelCanvas.nativeElement.querySelectorAll('td').forEach(td => td.style.backgroundColor = this.currentColor)
+  }
+
+  makeGrid = (rows, cols) => {
+    console.log('making grid')
+    console.log('NUM ROWS', this.NUM_OF_ROWS)
+    this.rows = []
+    this.cols = []
+    for (let i = 0; i < rows; i++) {
+      this.rows.push(i)
+    }
+
+    for (let i = 0; i < cols; i++) {
+      this.cols.push(i)
+    }
   }
 }
