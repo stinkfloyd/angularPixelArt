@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-6">
-      <app-grid [currentColor]="currentColor"></app-grid>
+      <app-grid #pixelCanvas [currentColor]="currentColor"></app-grid>
     </div>
     <div class="col-sm-6">
-      <app-color-picker (colorChange)="colorChange($event)"></app-color-picker>
+      <app-color-picker (colorChange)="colorChange($event)" (fill)="quickFill()"></app-color-picker>
     </div>
   </div>
 </div>

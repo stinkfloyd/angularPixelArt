@@ -4,4 +4,6 @@
   </label>
   <input [style.background]="color" [cpAlphaChannel]="'always'" [cpOutputFormat]="'rgba'" [cpPresetColors]="['#fff', '#2889e9']"
     (colorPickerChange)=change($event) [cpAddColorButton]="true" [(colorPicker)]="color" class="picker" />
+  <label>Fill grid with selected color: </label>
+  <input type="button" class="quick-fill" value="Quick-Fill" (click)="quickFill($event)">
 </div>

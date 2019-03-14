@@ -52,4 +52,8 @@ export class GridComponent implements OnInit {
       }
     })
   }
+
+  fill = () => {
+    this.pixelCanvas.nativeElement.querySelectorAll('td').forEach(td => td.style.backgroundColor = this.currentColor)
+  }
 }
