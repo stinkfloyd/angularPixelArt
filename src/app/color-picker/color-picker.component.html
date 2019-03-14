@@ -1,5 +1,7 @@
-<label>
-  Current Color (click to change):
-</label>
-<input [style.background]="color" [cpAlphaChannel]="'always'" [cpOutputFormat]="'rgba'" [cpPresetColors]="['#fff', '#2889e9']"
-  (colorPickerChange)=change($event) [cpAddColorButton]="true" [(colorPicker)]="color" class="picker" />
+<div class="colorPicker">
+  <label>
+    Current Color (click to change):
+  </label>
+  <input [style.background]="color" [cpAlphaChannel]="'always'" [cpOutputFormat]="'rgba'" [cpPresetColors]="['#fff', '#2889e9']"
+    (colorPickerChange)=change($event) [cpAddColorButton]="true" [(colorPicker)]="color" class="picker" />
+</div>

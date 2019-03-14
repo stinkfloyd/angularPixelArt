@@ -3,6 +3,8 @@
   border: 3px solid black;
   cursor: pointer;
   background-color: black;
+  border-radius: 20em;
+  padding: 15px;
 }
 
 label {
@@ -10,7 +12,6 @@ label {
   margin-right: 5px;
 }
 
-#colorPicker {
-  width: 75%;
-  margin: auto;
+.colorPicker {
+  margin-top: 3em;
 }
