@@ -36,6 +36,7 @@ export class GridComponent implements OnInit {
   }
 
   dragColor = (event) => {
+    event.preventDefault()
     this.down = true
     this.pixelCanvas.nativeElement.addEventListener('mouseup', () => {
       this.down = false
