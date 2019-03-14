@@ -1,4 +1,10 @@
-<app-grid [currentColor]="currentColor"></app-grid>
-<app-color-picker (colorChange)="colorChange($event)"></app-color-picker>
-
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <app-grid [currentColor]="currentColor"></app-grid>
+    </div>
+    <div class="col-sm-6">
+      <app-color-picker (colorChange)="colorChange($event)"></app-color-picker>
+    </div>
+  </div>
+</div>

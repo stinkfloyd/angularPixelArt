@@ -1,12 +1,5 @@
-<div class="container">
-  <h1>Pick a Color: </h1>
-  <table>
-    <tr>
-      <td *ngFor="let color of primary" [ngStyle]="{'background-color': color}" id={{color}} (click)="click($event)">
-      </td>
-    </tr>
-  </table>
-  <div>
-    <h1>Current Color: <span class='current' [ngStyle]="{'background-color': current}"></span></h1>
-  </div>
-</div>
+<label>
+  Current Color (click to change):
+</label>
+<input [style.background]="color" [cpAlphaChannel]="'always'" [cpOutputFormat]="'rgba'" [cpPresetColors]="['#fff', '#2889e9']"
+  (colorPickerChange)=change($event) [cpAddColorButton]="true" [(colorPicker)]="color" class="picker" />

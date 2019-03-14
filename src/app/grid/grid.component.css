@@ -1,5 +1,6 @@
 table {
   margin-top: 3em;
+  margin-bottom: 2em;
   display: block;
   overflow: scroll;
 }

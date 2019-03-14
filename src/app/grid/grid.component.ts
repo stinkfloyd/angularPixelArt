@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core'
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-  private NUM_OF_ROWS = 20// 50 max looks good
-  private NUM_OF_COLS = 40 // 100 max looks good
+  private NUM_OF_ROWS = 50// 50 max looks good
+  private NUM_OF_COLS = 50 // 100 max looks good
   private rows = []
   private cols = []
   @Input() currentColor
@@ -32,10 +32,6 @@ export class GridComponent implements OnInit {
       event.target.classList.replace('on', 'off')
       event.target.setAttribute('style', 'background-color: white')
     }
-  }
-
-  colorChange = (event) => {
-    console.log('test')
   }
 
 }
