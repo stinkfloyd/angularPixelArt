@@ -8,8 +8,8 @@ import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core'
 export class GridComponent implements OnInit {
   @Input() NUM_OF_ROWS
   @Input() NUM_OF_COLS
-  private rows = []
-  private cols = []
+  rows = []
+  cols = []
   @Input() currentColor
   @ViewChild('pixelCanvas') pixelCanvas: ElementRef
   private down = false
@@ -53,8 +53,6 @@ export class GridComponent implements OnInit {
   }
 
   makeGrid = (rows, cols) => {
-    console.log('making grid')
-    console.log('NUM ROWS', this.NUM_OF_ROWS)
     this.rows = []
     this.cols = []
     for (let i = 0; i < rows; i++) {

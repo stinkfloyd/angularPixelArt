@@ -10,6 +10,7 @@ export class ColorPickerComponent implements OnInit {
   @Output() colorChange: EventEmitter<any> = new EventEmitter()
   @Output() fill: EventEmitter<any> = new EventEmitter()
   @Output() size: EventEmitter<any> = new EventEmitter()
+  color
 
   constructor() { }
 

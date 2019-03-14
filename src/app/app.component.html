@@ -1,11 +1,11 @@
 <div class="container-fluid view">
   <div class="row row-eq-height">
-    <div class="col-sm-7">
-      <app-grid #pixelCanvas [NUM_OF_ROWS]="rows" [NUM_OF_COLS]="cols" [currentColor]="currentColor"></app-grid>
-    </div>
     <div class="col-sm-5">
       <app-color-picker (size)="sizeChange($event)" (colorChange)="colorChange($event)" (fill)="quickFill()"></app-color-picker>
       <p>Made by: Nicholas Tzavaras</p>
+    </div>
+    <div class="col-sm-7">
+      <app-grid #pixelCanvas [NUM_OF_ROWS]="num_rows" [NUM_OF_COLS]="num_cols" [currentColor]="currentColor"></app-grid>
     </div>
   </div>
 </div>
